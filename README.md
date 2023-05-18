@@ -23,6 +23,7 @@ If there was no pipe, redirection, and it was not a command I needed to handle s
 I decided to implement piping and redirection similarily  since they both required executing two sets of commands both before and after an operator. I chose to first check for piping and redirection first since they would need to be handled the soonest. When checking for builtin commands, it was simpler if I created a separate function cmd_handler() and passed in the argument (argv). This way I could also proceed depending on the output of that cmd_handler() and whether it was a success or a failure. For cd, instead of returning 1, I return 2. This ensures that the cd does not exit, since that would end the process that changes the directory. Instead it just returns. I had to change the main function code to kill instead of exit when quit is called so that all the process are ended, otherwise it would take multiple quit commands to terminate the shell. 
 
 ## Video Presentation
+https://youtu.be/awz5JAm1FYo
 
 ## Resources Used
 * https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
